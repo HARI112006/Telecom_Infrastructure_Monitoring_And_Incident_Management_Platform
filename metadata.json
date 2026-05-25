@@ -1,0 +1,6 @@
+{
+  "name": "Aether NOC",
+  "description": "Enterprise-grade NetOps Console featuring real-time telemetry dashboards, interactive node grids, anomaly alerts, performance reports, and an AI-powered diagnostic root-cause assistant.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

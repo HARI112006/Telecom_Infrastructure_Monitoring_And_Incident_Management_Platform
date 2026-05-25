@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+/* Custom styles for high-stakes FUI dashboard aesthetic */
+body {
+  background-color: #0b0e14;
+  color: #e1e2ec;
+  font-family: var(--font-sans);
+}
+
+/* Interactive elements scrollbar overrides */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(11, 14, 21, 0.4);
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(0, 240, 255, 0.25);
+  border-radius: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 240, 255, 0.45);
+}
+
+/* Glassmorphism panel configurations with real backdrop blur */
+.glass-panel {
+  background: rgba(29, 32, 38, 0.65);
+  backdrop-filter: blur(12px) saturate(120%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel:hover {
+  border-color: rgba(0, 240, 255, 0.2);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.04);
+}
+
+/* Active CRT Scanline Effect */
+.scanline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background: linear-gradient(to right, transparent, rgba(0, 240, 255, 0.35), transparent);
+  animation: scan 4s linear infinite;
+  pointer-events: none;
+  z-index: 10;
+}
+
+@keyframes scan {
+  0% { top: 0%; }
+  100% { top: 100%; }
+}
+
+/* Neon Glow FX */
+.glow-cyan {
+  box-shadow: 0 0 15px rgba(0, 219, 233, 0.35);
+}
+.glow-red {
+  box-shadow: 0 0 15px rgba(255, 180, 171, 0.35);
+}
+.glow-yellow {
+  box-shadow: 0 0 15px rgba(234, 179, 8, 0.35);
+}
+
+.glow-text-cyan {
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.5);
+}
+
+.glow-text-red {
+  text-shadow: 0 0 8px rgba(255, 180, 171, 0.5);
+}
+
+/* Pulse indicator Animations */
+@keyframes pulse-light {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+.animate-pulse-glow {
+  animation: pulse-light 2s ease-in-out infinite;
+}
+
+/* Particle background grid fallback */
+.network-grid {
+  background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+}
